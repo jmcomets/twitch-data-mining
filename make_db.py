@@ -12,8 +12,8 @@ def yield_all_streams():
     all_attrs = ((bool_, ('abuse_reported', 'channel_subscription',
                     'embed_enabled', 'featured',)),
                 (int, ('video_height', 'video_width', 'broadcast_part',
-                    'channel_count', 'channel_view_count', 'embed_count', 'id',
-                    'site_count', 'stream_count',)),
+                    'channel_count', 'channel_view_count', 'embed_count',
+                    'embedded_count', 'id', 'site_count', 'stream_count',)),
                 (str_, ('audio_codec', 'title', 'broadcaster', 'category',
                     'channel', 'format', 'geo', 'language', 'meta_game', 'name',
                     'stream_type', 'subcategory', 'video_codec',)),
@@ -26,7 +26,7 @@ def yield_all_streams():
             print e
             continue
         for stream_node in root.xpath('//stream'):
-            stream = {}
+            stream = { 'stream_date': datetime.datetime(int(os.path.splitext(os.path.basename(fname))[0])) }
             for node in stream_node:
                 if node.text is None:
                     continue
@@ -46,7 +46,7 @@ try:
 except lite.Error as e:
     pass
 try:
-    c.execute('create table streams (abuse_reported boolean, channel_subscription boolean, embed_enabled boolean, featured boolean, video_height int, video_width int, broadcast_part int, channel_count int, channel_view_count int, embed_count int, id int not null primary key, site_count int, stream_count int, audio_codec text, title text, broadcaster text, category text, channel text, format text, geo text, language text, meta_game text, name text, stream_type text, subcategory text, video_codec text, video_bitrate real, up_time datetime)')
+    c.execute('create table streams (stream_date datetime, abuse_reported boolean, channel_subscription boolean, embed_enabled boolean, featured boolean, video_height int, video_width int, broadcast_part int, channel_count int, channel_view_count int, embedded_count int, embed_count int, id int not null primary key, site_count int, stream_count int, audio_codec text, title text, broadcaster text, category text, channel text, format text, geo text, language text, meta_game text, name text, stream_type text, subcategory text, video_codec text, video_bitrate real, up_time datetime)')
 except lite.Error as e:
     pass
 
@@ -54,7 +54,7 @@ step = 1000
 for i, stream in enumerate(yield_all_streams()):
     if i % step == 0:
         print 'Stream #%s' % i
-    query = 'INSERT INTO streams (%s) VALUES (%s)' % (','.join(stream.keys()), ','.join(map(lambda x: '"%s"' % str(x).replace('"', '\''), stream.values())))
+    query = 'INSERT INTO streams (%s) VALUES %s)' % (','.join(stream.keys()), ','.join(map(lambda x: '"%s"' % str(x).replace('"', '\''), stream.values())))
     try:
         c.execute(query)
     except lite.Error as e:
