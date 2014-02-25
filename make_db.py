@@ -47,12 +47,16 @@ try:
 except lite.Error as e:
     pass
 
-progress = 0.
-for stream in yield_all_streams():
+step = 1000
+for i, stream in enumerate(yield_all_streams()):
+    if i % step == 0:
+        print 'Stream #%s' % i
     query = 'INSERT INTO streams (%s) VALUES (%s)' % (','.join(stream.keys()), ','.join(map(lambda x: '"%s"' % str(x).replace('"', '\''), stream.values())))
     try:
         c.execute(query)
     except lite.Error as e:
         print e
-        print query
-        break
+        print 'Query:', query
+        continue
+conn.commit()
+conn.close()
