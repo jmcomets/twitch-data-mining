@@ -41,8 +41,8 @@ def yield_all_streams():
 
 conn = lite.connect('twitch.db')
 c = conn.cursor()
-c.execute('drop table streams')
 try:
+    c.execute('drop table streams')
     c.execute('create table streams (abuse_reported boolean, channel_subscription boolean, embed_enabled boolean, featured boolean, video_height int, video_width int, broadcast_part int, channel_count int, channel_view_count int, embed_count int, id int, site_count int, stream_count int, audio_codec text, title text, broadcaster text, category text, channel text, format text, geo text, language text, meta_game text, name text, stream_type text, subcategory text, video_codec text, video_bitrate real, up_time datetime)')
 except lite.Error as e:
     pass
