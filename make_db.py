@@ -59,4 +59,5 @@ for stream in yield_all_streams():
         print e
         print query
         break
-c.commit()
+conn.commit()
+conn.close()
