@@ -166,16 +166,38 @@ prédire l'audience du flux.
 
 \subsection{Qualité}
 
+\subsection{Mise en avant sur Twitch et exportation sur d'autres plateforme}
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/embed_enabled_influence}
-    \caption{}
+    \caption{Vue en parallèle des compteurs de vues avec les flux non
+    exportable surlignés.}
+    \label{fig:embed_enabled_influence}
 \end{figure}
+
+Nous avons remarqué qu'il était possible d'activer l'exportation du flux vidéo
+sur une plateforme distante. Cela permet donc normalement d'étendre la
+visualisation et également le nombre de vue. Nous avons alors essayé de
+confirmer cette hypothèse. \\
+
+Le champ \textit{embed-enabled} du jeu de données indique si le flux est
+exportable ou pas. Nous avons surligné et coloré les flux ne pouvant pas être
+exportés puis nous avons tracé leurs nombres de vues en comparant avec les flux
+exportables sur la figure \ref{fig:embed_enabled_influence}. On voit alors
+clairement que les éléments colorés ont un nombre de vue largement moins
+important que les autres. \\
+
+Cela confirme alors notre hypothèse et nous pouvons donc définir que
+l'activation de l'exportation d'un flux est une condition de succès et de
+popularité. \\
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/featured_influence}
-    \caption{}
+    \caption{Vue en parallèle des compteurs de vues avec les flux non mis en
+    avant surlignés.}
+    \label{fig:featured_influence}
 \end{figure}
 
 % TODO
