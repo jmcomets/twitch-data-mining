@@ -214,8 +214,43 @@ popularité. \\
     \label{fig:featured_influence}
 \end{figure}
 
+En parallèle à l'exportation des flux, Twitch met en avant certaines vidéos sur
+leur page principale. Logiquement, on peut émettre l'hypothèse que cela
+contribue fortement à la popularité. \\
+
+Cette fois, nous avons fait la même chose qu'auparavant avec le champ
+\textit{featured} indiquant si le flux est mis en avant ou pas. La figure
+\ref{fig:featured_influence} montre l'équivalant de précédemment, à savoir, le
+nombre de vues pour chaque flux avec un colorie sur ceux qui ne sont pas mis en
+avant. \\
+
+La encore on remarque qu'ils beaucoup moins vues que les autres. Cela confirme
+donc notre hypothèse. La mise en avant par la plateforme Twitch est donc une
+bonne condition de succès d'une vidéo. \\
+
+Cependant, on remarque que ce résultat est moins marquant qu'avec l'exportation
+de la vidéo. L'exportation de la vidéo est donc plus important que la mise en
+avant par Twitch pour avoir beaucoup de vues sur sa vidéo. \\
+
 \section{Classement des "meilleurs" joueurs}
 
+% TODO rajouter l'image (ou tableau) du top 10
+
+Afin de trouver les utilisateurs ayant le plus de vues et donc le plus de
+popularité, nous avons regroupé les différentes vidéos appartenant au même
+utilisateurs en sommant le nombres de vues. En appliquant ensuite notre
+heuristique de popularité, on obtient alors la popularité totale de chaque
+utilisateurs. Nous avons ensuite trié cet ensemble afin de déterminé le
+classement de popularité des utilisateurs. \\
+
+Pour vérifier que ce résultat est valide et que l'heuristique s'applique bien
+et est en accord avec la définition réelle de la popularité, nous avons établi
+les classement des utilisateurs en fonction de chaque champ \textit{*\_count}.
+Les classement ne sont pas identique mais sont assez semblable. En effet, les
+utilisateurs du top 10 du classement par rapport à notre heuristique se
+retrouvent également bien classés dans les autres classements. \\
+
+\subsection{Quelque chose}
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/top_20_view_evolutions}
@@ -223,5 +258,9 @@ popularité. \\
 \end{figure}
 
 % TODO classement par tableau/graphe
+
+\section{Conclusion}
+
+Le jeu de donnée il est trop à chier.
 
 \end{document}
