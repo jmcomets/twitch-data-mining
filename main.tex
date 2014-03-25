@@ -41,6 +41,9 @@ Nous avons donc retiré cet attribut, pour pouvoir définir la notion de
 \textbf{popularité} d'un flux, correspondant à une somme normalisée des
 différents indicateurs. \\
 
+Cet indicateurs nous sert d'heuristique pour établir les différentes
+catégorisations suivantes :
+
 \subsection{Catégorisation}
 
 Un seul attribut permettant de catégoriser les différents flux est disponible,
@@ -75,7 +78,7 @@ etc...).
     \label{fig:main_consoles}
 \end{figure}
 
-\subsubsection{Les jeux vidéo populaires}
+\subsection{Les jeux vidéo populaires}
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/main_games}
@@ -92,13 +95,9 @@ de la réalité.
 
 En tout il y a 160 jeux différents en comptant les doublons. Nous avons établi
 la part de vue des différents jeux en groupant sur le champ \textit{meta-name}
-et en sommant les différents compteurs de vue \textit{site-count},
-\textit{channel-view-count}, \textit{channel-count}, \textit{embbeded-count}.
-Cette dernière somme représente une heuristique de popularité
-(\textit{popularity}). Comme une grande quantité de jeu était très minoritaire
-selon notre heuristique, nous avons regroupé ces derniers (en seuillant la
-popularité) dans une seule catégorie \textit{misc}.
-
+et en sommant l'heuristique de popularité. Comme une grande quantité de jeu
+était très minoritaire selon notre heuristique, nous avons regroupé ces
+derniers (en seuillant la popularité) dans une seule catégorie \textit{misc}.
 
 La figure \ref{fig:main_games} représente la popularité de chaque jeux.
 L'ensemble des jeux \textit{misc} forment $19\%$ de popularité tandis que 10
