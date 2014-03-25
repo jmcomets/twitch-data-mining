@@ -43,12 +43,6 @@ l'analyse d'un échantillon fixé des données, soit 5 000 streams.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{images/logo}
-    \caption{}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
     \includegraphics[width=\textwidth]{images/main_categories}
     \caption{}
 \end{figure}
@@ -62,8 +56,57 @@ l'analyse d'un échantillon fixé des données, soit 5 000 streams.
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/main_games}
-    \caption{}
+    \caption{Part de vue en moyenne des jeux vidéo}
+    \label{fig:main_games}
 \end{figure}
+
+Dans le jeu de données utilisé, la plupart des jeux étaient en doublons car ils
+n'étaient pas tous orthographiés de la même façon (majuscules/minuscules,
+espaces, ...). Nous n'avons pas pu, à cause de la taille des données, corriger
+toutes les entrées afin d'unifier l'écriture des jeux. Les résultats ne sont
+donc pas complètement exacts mais donnent tout de même une bonne approximation
+de la réalité.
+
+En tout il y a 160 jeux différents en comptant les doublons. Nous avons établi
+la part de vue des différents jeux en groupant sur le champ \textit{meta-name}
+et en sommant les différents compteurs de vue \textit{site-count},
+\textit{channel-view-count}, \textit{channel-count}, \textit{embbeded-count}.
+Cette dernière somme représente une heuristique de popularité
+(\textit{popularity}). Comme une grande quantité de jeu était très minoritaire
+selon notre heuristique, nous avons regroupé ces derniers (en seuillant la
+popularité) dans une seule catégorie \textit{misc}.
+
+
+La figure \ref{fig:main_games} représente la popularité de chaque jeux.
+L'ensemble des jeux \textit{misc} forment $19\%$ de popularité tandis que 10
+autres jeux prennent les $80\%$ restant. Il y a donc une très grande disparité
+dans les jeux vidéo et une petite minorité de 10 jeux écrasent totalement 150
+autres jeux.
+
+\begin{table}[c]
+  \centering
+   \caption{\label{tab:games_rank} Classement des 10 jeux les plus populaires
+   sur la plateforme Twitch.}
+   \begin{tabular}{|c|c|c|}
+     \hline
+     Position & Jeux vidéo & Part de popularité (en \%) \\
+     \hline
+     1 & StarCraft II & 25.12 \\
+     2 & World of Warcraft : Cataclysm & 11.25 \\
+     3 & Super Street Fighter IV & 10.18 \\
+     4 & League of Legends & 8.98 \\
+     5 & Gears of War & 7.46 \\
+     6 & Battlefield 3 & 5.87 \\
+     7 & Call of Duty : Black Ops & 3.58 \\
+     8 & The Ico \& Shadow of Colossus Collection & 3.26 \\
+     9 & Halo : Reach & 3.23 \\
+     10 & Heroes of Newerth & 2.21 \\
+     \hline
+   \end{tabular}
+\end{table}
+
+Le tableau \ref{tab:games_rank} montre alors un classement des jeux les plus
+populaires sur la plateforme Twitch.
 
 \begin{figure}[h]
     \centering
