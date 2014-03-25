@@ -166,6 +166,27 @@ prédire l'audience du flux.
 
 \subsection{Qualité}
 
+Nous distinguons deux informations sur la qualité du flux : la qualité vidéo et
+la qualité audio. Au vu du faible nombre de valeurs discrètes, qui sont
+fortement distribuées par rapport au reste des attributs, nous avons décidé de
+ne pas étudier la qualité audio du flux. \\
+
+Nous n'avons que quelques informations sur la qualité de la vidéo : les
+dimensions (\textit{video\_width} de la vidéo et \textit{video\_height}) et le
+taux d'émission du flux (\textit{bitrate}). Nous avons donc multiplié ces
+différents attributs pour définir la qualité de la vidéo, à partir de laquelle
+nous pouvions essayer d'apprendre le succès prévu. Nous avons ignoré l'attribut
+\textit{video\_codec}, qui ne comporte que deux valeurs discrètes, dont une en
+très grande majorité. \\
+
+Malheureusement nous avons pu confirmer que la qualité de la vidéo n'a aucune
+influence sur la popularité de la vidéo, vu que celle-ci est plutôt uniforme.
+\\
+
+\textit{Remarque : nous avons préféré ne pas intégrer les graphiques
+    représentant l'influence de la qualité, vu qu'ils ne mettent aucune
+    information intéressante en valeur.}
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/embed_enabled_influence}
