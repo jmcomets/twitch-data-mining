@@ -138,6 +138,34 @@ populaires sur la plateforme Twitch.
 
 \section{Prédiction de l'audience d'un flux}
 
+Un des intérêts majeur de cette étude est de pouvoir prédire l'audience d'un
+flux à partir d'informations simples sur le flux, telles que la localisation,
+la langue ou encore le type de jeu. \\
+
+Nous nous sommes focalisés sur l'étude de la qualité d'un flux, ainsi que sa
+localisation et sa langue, pour pouvoir prévoir la popularité du flux.
+
+\subsection{Localisation/Langue}
+
+Avant de démarrer, la première impression en observant le jeu de données, a été
+le poids important des États-Unis dans l'audience de Twitch, vu que cette
+plateforme a été développée là-bas. Ça n'a donc pas été surprenant de voir nos
+différents calculs de clusters par localisation écrasés par le poids des
+États-Unis. \\
+
+En ce qui concerne la langue, le résultat est encore plus flagrant, la langue
+anglaise est présente sur une majorité imposante des flux. Ce n'est donc pas
+surprenant de ne pas pouvoir prévoir quoi que ce soit à partir de cette
+information. \\
+
+En conclusion, notre recherche de groupes ou de motifs récurrents à partir des
+informations de localisation a été infructueuse. Peut-être qu'à partir
+d'informations plus détaillées moins anonymes, avec par exemple la position
+géographique approximative du joueur, nous sommes qu'il serait possible de
+prédire l'audience du flux.
+
+\subsection{Qualité}
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/embed_enabled_influence}
