@@ -7,9 +7,6 @@
 \usepackage{hyperref}
 \usepackage{float}
 
-%\renewcommand{\familydefault}{\sfdefault}
-%\usepackage[top = 2.54cm, bottom = 2.54cm, left=2.5cm, right=2.5cm]{geometry}
-
 \titlehead{\centering\includegraphics[width=\textwidth]{images/logo}}
 \title{Projet Data Mining}
 \author{Pierre \textsc{Turpin}, Jean-Marie \textsc{Comets}}
@@ -31,8 +28,8 @@ l'ensemble de l'étude.
 
 \subsection{Popularité}
 
-En étudiant les différents indicateurs quantitatifs (attribus *\_count),
-représentant le nombre de visionnages d'un flux, nous avons pu remarquer que
+En étudiant les différents indicateurs quantitatifs (attributs *\_count),
+représentant le nombre de vues d'un flux, nous avons pu remarquer que
 quasiment toutes celles-ci sont indépendantes, mis à part l'attribut
 \textit{stream\_count}, qui ne représente que la somme du
 \textit{embedded\_count} et du \textit{site\_count}. \\
@@ -54,18 +51,18 @@ plateforme, nous avons séparé ces deux informations. \\
 Ainsi, dans la figure \ref{fig:main_consoles}, nous n'observons pas la
 plateforme PC, qui devrait cependant regrouper beaucoup de flux (plateforme non
 définie là où le type de jeu est bien défini). Cependant, nous pouvons
-remarquer qu'entre les différentes consoles de jeu, c'est la plateforme \textbf{XBOX}
+remarquer qu'entre les différentes consoles de jeu, c'est la plateforme XBOX
 qui a le plus de succès. \\
 
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{images/main_consoles}
-    \caption{Parts des vues selon la plateforme (console) du jeu}
-    \label{fig:main_consoles}
+    \caption{\label{fig:main_consoles} Parts des vues selon la plateforme
+        (console) du jeu}
 \end{figure}
 
 Nous remarquons à partir de la figure \ref{fig:main_categories} donc que la
-catégorie \textbf{strategy} se détache des autres, prenant plus de 60 \% de la
+catégorie \textbf{strategy} se détache des autres, prenant plus de $60 \%$ de la
 part du nombre de vues des flux. Ceci correspond bien à nos attentes, vu que
 Twitch est principalement connu pour des jeux développés pour PC, avec une
 préférence pour les jeux de stratégie/roleplay (Starcraft, League of Legends,
@@ -74,16 +71,15 @@ etc...).
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{images/main_categories}
-    \caption{Parts des vues selon la catégorie du jeu}
-    \label{fig:main_categories}
+    \caption{\label{fig:main_categories} Parts des vues selon la catégorie du
+        jeu}
 \end{figure}
 
 \subsection{Les jeux vidéo populaires}
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{images/main_games}
-    \caption{Parts de vues en moyenne des jeux vidéo}
-    \label{fig:main_games}
+    \caption{\label{fig:main_games} Parts de vues en moyenne des jeux vidéo}
 \end{figure}
 
 Dans le jeu de données utilisé, la plupart des jeux étaient en doublons car ils
@@ -94,7 +90,7 @@ donc pas complètement exacts mais donnent tout de même une bonne approximation
 de la réalité. \\
 
 En tout il y a 160 jeux différents en comptant les doublons. Nous avons établi
-la part de vue des différents jeux en groupant sur le champ \textit{meta-name}
+la part de vue des différents jeux en groupant sur le champ \textit{meta\_name}
 et en sommant l'heuristique de popularité. Comme une grande quantité de jeu
 était très minoritaire selon notre heuristique, nous avons regroupé ces
 derniers (en seuillant la popularité) dans une seule catégorie \textit{misc}. \\
@@ -154,9 +150,9 @@ information. \\
 
 En conclusion, notre recherche de groupes ou de motifs récurrents à partir des
 informations de localisation a été infructueuse. Peut-être qu'à partir
-d'informations plus détaillées moins anonymes, avec par exemple la position
-géographique approximative du joueur, nous sommes qu'il serait possible de
-prédire l'audience du flux.
+d'informations moins anonymes, avec par exemple la position géographique
+approximative du joueur, nous pensons qu'il serait possible de prédire
+l'audience du flux.
 
 \subsection{Qualité}
 
@@ -185,9 +181,8 @@ influence sur la popularité de la vidéo, vu que celle-ci est plutôt uniforme.
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/embed_enabled_influence}
-    \caption{Vue en parallèle des compteurs de vues avec les flux non
-    exportable surlignés.}
-    \label{fig:embed_enabled_influence}
+    \caption{\label{fig:embed_enabled_influence} Vue en parallèle des compteurs
+        de vues avec les flux non exportable surlignés.}
 \end{figure}
 
 Nous avons remarqué qu'il était possible d'activer l'exportation du flux vidéo
@@ -195,7 +190,7 @@ sur une plateforme distante. Cela permet donc normalement d'étendre la
 visualisation et également le nombre de vue. Nous avons alors essayé de
 confirmer cette hypothèse. \\
 
-Le champ \textit{embed-enabled} du jeu de données indique si le flux est
+Le champ \textit{embed\_enabled} du jeu de données indique si le flux est
 exportable ou pas. Nous avons surligné et coloré les flux ne pouvant pas être
 exportés puis nous avons tracé leurs nombres de vues en comparant avec les flux
 exportables sur la figure \ref{fig:embed_enabled_influence}. On voit alors
@@ -209,9 +204,8 @@ popularité. \\
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/featured_influence}
-    \caption{Vue en parallèle des compteurs de vues avec les flux non mis en
-    avant surlignés.}
-    \label{fig:featured_influence}
+    \caption{\label{fig:featured_influence} Vue en parallèle des compteurs de
+        vues avec les flux non mis en avant surlignés.}
 \end{figure}
 
 En parallèle à l'exportation des flux, Twitch met en avant certaines vidéos sur
@@ -270,12 +264,26 @@ Les classement ne sont pas identique mais sont assez semblable. En effet, les
 utilisateurs du top 10 du classement par rapport à notre heuristique se
 retrouvent également bien classés dans les autres classements. \\
 
-\subsection{Quelque chose}
+\subsection{Évolution temporelle des flux les plus visionnés}
+
+En visualisant l'évolution de l'audience d'un flux au cours du temps, nous
+avons pu observer que la majorité des flux ont une audience plutôt constante.
+Nous avons visualisé dans la figure \ref{fig:top_20_view_evolutions}, l'évolution
+temporelle des 20 flux les plus \textit{viraux}, c'est-à-dire ceux qui ont eu
+le plus grand maximum de spectateurs simultanés. \\
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/top_20_view_evolutions}
-    \caption{}
+    \caption{\label{fig:top_20_view_evolutions} Évolution temporelle des flux
+        les plus visionnés}
 \end{figure}
+
+Dans cette dernière, nous avons étudié en détail le plus viral des 20, un flux
+nommé \textbf{Grab Bag of Things}, qui est introuvable par simple recherche.
+Nous pensons que celui-ci est un véritable \textit{outlier}, sûrement un flux
+utilisé par les développeurs pour tester la réactivité des serveurs face à une
+audience accrue.
 
 \section{Conclusion}
 
